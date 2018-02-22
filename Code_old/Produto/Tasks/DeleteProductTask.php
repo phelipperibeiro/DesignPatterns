@@ -8,7 +8,7 @@ use Code\Produto\ProdutoDAO;
 use Code\Produto\ProdutoManager;
 use Code\Logger\Logger;
 
-class DeleteProductTask implements TaskInterface
+class DeleteProductTask extends AbstractTask
 {
 
     public function run()

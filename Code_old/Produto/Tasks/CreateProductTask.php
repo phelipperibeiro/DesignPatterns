@@ -4,11 +4,8 @@ namespace Code\Produto\Tasks;
 
 use Code\Task\TaskInterface;
 use Code\Produto\Produto;
-use Code\Produto\ProdutoDAO;
-use Code\Produto\ProdutoManager;
-use Code\Logger\Logger;
 
-class CreateProductTask implements TaskInterface
+class CreateProductTask extends AbstractTask
 {
 
     public function run()
@@ -17,12 +14,7 @@ class CreateProductTask implements TaskInterface
         $produto->setId(1);
         $produto->setNome("Tennis Corrida");
         
-
-        $Conn = new \PDO('mysql:host=10.10.1.240;dbname=movida_gtf', 'cpd', '');
-        $ProdutoDAO = new ProdutoDAO($Conn);
-        $Logger = new Logger();
-
-        $ProdutoManager = new ProdutoManager($ProdutoDAO, $Logger);
+        $ProdutoManager = $this->di->get('produto.manager');
         $ProdutoManager->save($produto);
     }
 

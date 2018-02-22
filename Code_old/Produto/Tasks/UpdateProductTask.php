@@ -8,7 +8,7 @@ use Code\Produto\ProdutoDAO;
 use Code\Produto\ProdutoManager;
 use Code\Logger\Logger;
 
-class UpdateProductTask implements TaskInterface
+class UpdateProductTask extends AbstractTask
 {
 
     public function run()
