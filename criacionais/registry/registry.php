@@ -13,7 +13,7 @@ class Registry
     static function get($index)
     {
         if (!isset(static::$values[$index])) {
-            throw new \InvalidArgumentException("N„o h· valor cadastro com o indice {$index}");
+            throw new \InvalidArgumentException("N√£o h√° valor cadastro com o indice {$index}");
         }
 
         return static::$values[$index];
